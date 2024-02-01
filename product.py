@@ -6,15 +6,14 @@ class Product:
     def get_all_products():
         cursor.execute("SELECT * FROM product")
         return cursor.fetchall()
-    def get_product_by_id(id):
-        cursor.execute("SELECT * FROM product WHERE id = {}".format(id))
-        return cursor.fetchone()
-    def get_product_by_name(name):
-        cursor.execute("SELECT * FROM product WHERE name = '{}'".format(name))
-        return cursor.fetchone()
-    def get_product_by_category(category):
-        cursor.execute("SELECT * FROM product WHERE category = '{}'".format(category))
-        return cursor.fetchall()
-    def add_product(name, category, price, quantity, description, id_category):
-        cursor.execute("INSERT INTO product (name, category, price) VALUES ('{}', '{}', {})".format(name, category, price))
+    def add_product(self,name, description, price, quantity, id_category):
+        cursor.execute(f"INSERT INTO product (name, category, price) VALUES ('{self.name}', {self.description}, {self.price}, {self.quantity}, {self.id_category}")
         connexion.commit()
+    def delete_product(self,name):
+        cursor.execute(f"DELETE FROM product WHERE name = '{self.name}'")
+        connexion.commit()
+    def update_product(self,what, where, new_value, value):
+        cursor.execute(f"UPDATE product SET {self.what} = {self.new_value} WHERE {self.where} = {self.value}")
+        connexion.commit()
+    
+
