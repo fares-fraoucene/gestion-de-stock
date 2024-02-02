@@ -20,4 +20,3 @@ class Product:
 
 
 n = Product()
-print(n.get_all_products())
