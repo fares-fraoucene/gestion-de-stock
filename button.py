@@ -1,12 +1,12 @@
 import pygame
 pygame.init()
 
-class Button:
+class Text:
     def __init__(self):
-        self.font = pygame.font.Font('freesansbold.ttf', 32)
-        
+        self.font = pygame.font.Font('freesansbold.ttf', 26)
+
     def draw_text(self,text):
-        text = self.font.render(text, True, (0, 0, 0))
-        return text
+        draw = self.font.render(text, True, (0, 0, 0))
+        return draw
 
 
