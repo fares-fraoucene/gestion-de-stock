@@ -74,8 +74,8 @@ while True:
                 product.delete_product(text_area_text6)
                 screen_state = "ecran_principal"
                 text_area_text6 = ''
-            if screen_state == "modifier_produit" and 260 <= pos[0] <= 340 and 500 <= pos[1] <= 520:
-                product.update_product(text_area_text7, text_area_text8, int(text_area_text9))
+            if screen_state == "modifier_produit" and 260 <= pos[0] <= 340 and 370 <= pos[1] <= 390:
+                product.update_product(text_area_text7, text_area_text8, text_area_text9)
                 screen_state = "ecran_principal"
                 text_area_text7 = ''
                 text_area_text8 = ''
@@ -156,7 +156,7 @@ while True:
                     text_area_text9 += event.unicode
         if event.type == pygame.MOUSEBUTTONDOWN:
             if is_mouse_inside_text_area(text_area_rect1) and screen_state == "ajouter_produit":
-                text_area_active1 = False
+                text_area_active1 = True
                 text_area_active2 = False
                 text_area_active3 = False
                 text_area_active4 = False
@@ -167,7 +167,7 @@ while True:
                 text_area_active9 = False
             elif is_mouse_inside_text_area(text_area_rect2) and screen_state == "ajouter_produit":
                 text_area_active1 = False
-                text_area_active2 = False
+                text_area_active2 = True
                 text_area_active3 = False
                 text_area_active4 = False
                 text_area_active5 = False
@@ -178,7 +178,7 @@ while True:
             elif is_mouse_inside_text_area(text_area_rect3) and screen_state == "ajouter_produit":
                 text_area_active1 = False
                 text_area_active2 = False
-                text_area_active3 = False
+                text_area_active3 = True
                 text_area_active4 = False
                 text_area_active5 = False
                 text_area_active6 = False
@@ -189,7 +189,7 @@ while True:
                 text_area_active1 = False
                 text_area_active2 = False
                 text_area_active3 = False
-                text_area_active4 = False
+                text_area_active4 = True
                 text_area_active5 = False
                 text_area_active6 = False
                 text_area_active7 = False
@@ -200,7 +200,7 @@ while True:
                 text_area_active2 = False
                 text_area_active3 = False
                 text_area_active4 = False
-                text_area_active5 = False
+                text_area_active5 = True
                 text_area_active6 = False
                 text_area_active7 = False
                 text_area_active8 = False
@@ -323,6 +323,7 @@ while True:
         screen.blit(text.draw_text("Nom :"), (260, 200))
         pygame.draw.rect(screen, "gray", text_area_rect6)
         screen.blit(text.draw_text(text_area_text6), (260, 205))
+        screen.blit(text.draw_text("Nom produit:"), (260, 180))
         screen.blit(text.draw_text("valider"), (260, 250))
         screen.blit(text.draw_text("Retour"), (10, 550))
         pygame.display.flip()
