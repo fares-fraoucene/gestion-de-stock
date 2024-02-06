@@ -307,7 +307,7 @@ while True:
         pygame.draw.rect(screen, "gray", text_area_rect7)
         pygame.draw.rect(screen, "gray", text_area_rect8)
         pygame.draw.rect(screen, "gray", text_area_rect9)
-        screen.blit(text.draw_text("Nom Colonne:"), (260, 180))
+        screen.blit(text.draw_text("Nom Colonne: (eng)"), (260, 180))
         screen.blit(text.draw_text("Nouvelle Valeur:"), (260, 240))
         screen.blit(text.draw_text("Id Produit:"), (260, 300))
         screen.blit(text.draw_text(text_area_text7),(260, 200))
